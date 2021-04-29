@@ -24,6 +24,10 @@ def light_off(request):
 
 
 def led(request):
-    s = int(request.GET['light'])
-    light(s)
+    try:
+        s = int(request.POST['light'])
+        light(s)
+    except:
+        pass
+
     return render(request, 'light.html')

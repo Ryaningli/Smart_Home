@@ -5,7 +5,8 @@
     <title>点灯</title>
 </head>
 <body>
-<form>
+<form action="/led/" method="post">
+    {% csrf_token %}
     <input type="text" name="light">
     <input type="submit" name="点灯">
 </form>
