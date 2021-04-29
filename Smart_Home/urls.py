@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from Smart_Home import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', views.index),
+    path('on/', views.light_on),
+    path('off/', views.light_off),
 ]
