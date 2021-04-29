@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Smart_Home.raspiberry import light
+from .raspiberry import light
 
 
 def index(request):
@@ -21,3 +21,9 @@ def light_off(request):
     context['light'] = '熄灭'
     context['success'] = light(0)
     return render(request, 'light.html', context)
+
+
+def led(request):
+    s = int(request.GET['light'])
+    light(s)
+    return render(request, 'light.html')
