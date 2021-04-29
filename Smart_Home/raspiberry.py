@@ -8,6 +8,6 @@ def light(signal):
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(17, GPIO.OUT)
     GPIO.output(17, signal)
-    GPIO.cleanup()
+    # GPIO.cleanup()
     print('已将电平设为：%s' % signal)
     return '成功'
